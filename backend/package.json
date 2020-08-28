@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
-        "dev": "npm run build && nodemon dist/server.js"
+        "dev": "nodemon --exec babel-node server.js"
     },
     "keywords": [
         "food"
@@ -21,9 +21,11 @@
         "mongoose": "^5.10.2"
     },
     "devDependencies": {
+        "@babel/cli": "^7.10.5",
+        "@babel/core": "^7.11.4",
+        "@babel/node": "^7.10.5",
+        "@babel/preset-env": "^7.11.0",
         "babel-cli": "^6.26.0",
-        "babel-preset-es2015": "^6.24.1",
-        "nodemon": "^2.0.4",
-        "rimraf": "^3.0.2"
+        "nodemon": "^2.0.4"
     }
 }

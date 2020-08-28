@@ -5,6 +5,9 @@ import bodyParser from 'body-parser'
 import dotenv from 'dotenv'
 import cors from 'cors'
 
+// routes
+import Restaurants from './routes/restaurants'
+
 dotenv.config()
 
 const app = express()
@@ -13,6 +16,8 @@ const server = http.createServer(app)
 
 app.use(bodyParser.json())
 app.use(cors())
+
+app.use('/api', Restaurants)
 
 //Connect to Mongo
 mongoose.connect(
