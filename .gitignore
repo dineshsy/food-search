@@ -3,17 +3,16 @@
 # dependencies
 /frontend/node_modules
 /backend/node_modules
-/food-search/backend/.env
 /node_modules
 /.pnp
 .pnp.js
-food-search/backend/.env
 
 
 # testing
 /coverage
 
 # production
+/backend/.env
 /frontend/build
 /frontend/.env
 
