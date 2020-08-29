@@ -18,6 +18,7 @@ export const ContentWrapper = styled.div`
     margin: auto;
     max-width: 1440px;
     display: ${(props) => props.display};
+    padding: 0 5rem;
 `
 
 export const Label = styled.label`
