@@ -10,6 +10,9 @@ router.get('/restaurants', (req, res) => {
     if (req.query.title) {
         query['title'] = new RegExp(`${req.query.title}`, 'i')
     }
+    if (req.query.category) {
+        query['category'] = [req.query.category]
+    }
     RestaurantSchema.find(query)
         .skip(restaurantsPerReq * currentStepOfUser)
         .limit(restaurantsPerReq)
