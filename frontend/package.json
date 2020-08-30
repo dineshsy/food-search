@@ -20,7 +20,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "deploy": "npm run build && aws s3 cp frontend/build/  s3://food-search.dineshsy.live --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --recursive"
+        "deploy": "npm run build && aws s3 cp build/  s3://food-search.dineshsy.live --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --recursive"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -36,5 +36,6 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
-    }
+    },
+    "proxy": "https://git.heroku.com/nameless-dusk-64690.git"
 }
