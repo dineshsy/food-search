@@ -16,13 +16,6 @@ const server = http.createServer(app)
 
 app.use(bodyParser.json())
 
-const corsOptions = {
-    origin: '*',
-    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
-
-app.use(cors(corsOptions))
-
 //CORS middleware
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*')
