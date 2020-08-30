@@ -46,14 +46,14 @@ export const Hero = () => {
                             let query = history.location.search
                             query = query.slice(1)
                             query = query.split('&')
-                            const tag = query
-                                .find((e) => e.includes('tag'))
+                            const category = query
+                                .find((e) => e.includes('category'))
                                 ?.split('=')[1]
                             console.log(query)
-                            if (tag) {
+                            if (category) {
                                 search = `${
                                     search ? search + '&' : ''
-                                }tag=${tag}`
+                                }category=${category}`
                             }
                             history.replace({
                                 path: '',
