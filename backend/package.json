@@ -5,11 +5,8 @@
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "nodemon --exec babel-node server.js",
-        "clean": "rm -rf build && mkdir build",
-        "build-babel": "babel -d ./build ./server.js -s",
-        "build": "npm run clean && npm run build-babel",
-        "start": "npm run build && node ./build/index.js"
+        "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+        "dev": "nodemon --exec babel-node server.js"
     },
     "keywords": [
         "food"
@@ -17,19 +14,18 @@
     "author": "Dinesh",
     "license": "ISC",
     "dependencies": {
-        "babel-preset-env": "^1.7.0",
         "body-parser": "^1.19.0",
         "cors": "^2.8.5",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
-        "mongoose": "^5.10.2",
-        "nodemon": "^2.0.4"
+        "mongoose": "^5.10.2"
     },
     "devDependencies": {
         "@babel/cli": "^7.10.5",
         "@babel/core": "^7.11.4",
         "@babel/node": "^7.10.5",
         "@babel/preset-env": "^7.11.0",
-        "babel-cli": "^6.26.0"
+        "babel-node": "0.0.1-security",
+        "nodemon": "^2.0.4"
     }
 }
